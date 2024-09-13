@@ -19,7 +19,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
   return (
     <header>
       <div className="nav-title">
-        <img src="./library.svg" />
+        <img src="/library.svg" />
         <h1>Library Model</h1>
       </div>
       <nav>
