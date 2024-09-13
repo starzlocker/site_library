@@ -165,13 +165,24 @@ const BookForm = ({addBook}) => {
 
 // Component to render a bookshelf
 function Bookshelf({ filteredBooks, setFilteredBooks, children }) {
+  function getImageUrl(name) {
+    return new URL(`../assets/${name}`, import.meta.url).href;
+  }
+
   return (
     <div className="books-container">
       {children}
     
       {filteredBooks.map((book, index) => (
         <div className="card" key={index}>
-          <img className="book-cover" src={book.cover || ""} alt={book.title} />
+          <img 
+            className="book-cover" 
+            src={book.cover ? getImageUrl(book.cover) : getImageUrl('nocover.jpg')} alt={book.title} 
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = getImageUrl('nocover.jpg');
+            }}
+          />
           <button
             className="remove-btn"
             onClick={(e) => removeBook(e, setFilteredBooks)}

@@ -89,16 +89,36 @@ header {
       border: none;
       background-color: transparent;
       cursor: default;
-      width: 12px;
+      width: 20px;
+
+      .magnifying-glass {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
 
+
+
 @media screen and (max-width: 505px) {
   header {
     flex-direction: column;
+    width: 100%;
     height: auto;
     align-items: start;
+  }
+
+  input, select {
+    font-size: 16px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  div.searchbar {
+    width: 100%;
   }
 }
 

@@ -1,5 +1,6 @@
-import { FaMagnifyingGlass } from "react-icons/fa6";
 /* eslint-disable react/prop-types */
+import magnifyingGlass from '../assets/magnifying-glass.svg';
+import library from '../assets/library.svg';
 const Searchbar = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="searchbar">
@@ -9,7 +10,7 @@ const Searchbar = ({ searchTerm, setSearchTerm }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
       ></input>
       <button type="submit">
-        <FaMagnifyingGlass />
+        <img src={magnifyingGlass} className='magnifying-glass'/>
       </button>
     </div>
   );
@@ -19,7 +20,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
   return (
     <header>
       <div className="nav-title">
-        <img src="/library.svg" />
+        <img src={library} />
         <h1>Library Model</h1>
       </div>
       <nav>
