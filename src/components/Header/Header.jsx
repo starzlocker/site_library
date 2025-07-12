@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import magnifyingGlass from '../assets/magnifying-glass.svg';
-import library from '../assets/library.svg';
+import magnifyingGlass from '../../assets/magnifying-glass.svg';
+import library from '../../assets/library.svg';
 const Searchbar = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="searchbar">
@@ -21,7 +21,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
     <header>
       <div className="nav-title">
         <img src={library} />
-        <h1>Library Model</h1>
+        <h1 className="text-3x1">Library Model</h1>
       </div>
       <nav>
         <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

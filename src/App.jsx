@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Main from "./components/Main";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import "./components/ModalBookDetails/ModalBookDetails.css"
+import Main from "./components/Main/Main";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import books from "./data/books";
 import Book from "./models/Book";
 
