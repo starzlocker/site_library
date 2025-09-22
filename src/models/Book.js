@@ -4,7 +4,7 @@ class Book {
       this.author = '';
       this.year = '';
       this.genre = '';
-      this.cover = '';
+      this.cover_url = '';
   }
 
   setTitle = (title) => {
@@ -43,12 +43,12 @@ class Book {
       }
   }
 
-  setCover = (cover) => {
-      if(cover) {
-          this.cover = cover;
+  setCover = (cover_url) => {
+      if(cover_url) {
+          this.cover_url = cover_url;
           return this;
       } else {
-          this.cover = '../../midia/nocover.jpg';
+          this.cover_url = '../../midia/nocover.jpg';
       }
   }
 

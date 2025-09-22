@@ -7,7 +7,7 @@ const BookDetails = ({book}) => {
       "author": "George Orwell",
       "year": "1949",
       "genre": "Dystopian",
-      "cover": "1984.jpg"
+      "cover_url": "1984.jpg"
     }
 
     

@@ -29,7 +29,7 @@ const BookForm = ({ addBook }) => {
 		author: '',
 		year: year,
 		genre: '',
-		cover: '',
+		cover_url: '',
 	});
 
 	const handleChange = (e) => {
@@ -50,7 +50,7 @@ const BookForm = ({ addBook }) => {
 			author: '',
 			year: year,
 			genre: '',
-			cover: '',
+			cover_url: '',
 		});
 
 		const dialog = document.querySelector('dialog');
@@ -161,7 +161,7 @@ const BookForm = ({ addBook }) => {
 							type="text"
 							id="cover-image-in"
 							name="cover"
-							value={book.cover}
+							value={book.cover_url}
 							onChange={handleChange}
 							onFocus={handleFocus}
 							onBlur={handleBlur}
@@ -183,7 +183,7 @@ const BookForm = ({ addBook }) => {
 // Component to render a bookshelf
 function Bookshelf({ filteredBooks, setFilteredBooks, children }) {
 	function getImageUrl(name) {
-		return new URL(`../../assets/${name}`, import.meta.url).href;
+		return name;
 	}
 
 	return (
@@ -195,8 +195,8 @@ function Bookshelf({ filteredBooks, setFilteredBooks, children }) {
 					<img
 						className="book-cover"
 						src={
-							book.cover
-								? getImageUrl(book.cover)
+							book.cover_url
+								? getImageUrl(book.cover_url)
 								: getImageUrl('nocover.jpg')
 						}
 						alt={book.title}
@@ -228,7 +228,7 @@ const Main = ({ filteredBooks, setFilteredBooks, addBook }) => {
 					setFilteredBooks={setFilteredBooks}
 				>
 					<BookForm addBook={addBook} />
-					<ModalBookDetails/>
+					{/* <ModalBookDetails/> */}
 				</Bookshelf>
 			</main>
 		</>
