@@ -1,0 +1,108 @@
+.form-book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 700px;
+    height: auto;
+    padding: 1rem;
+    z-index: 10;
+    position: absolute;
+    top: 25%;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 8px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.modal-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    pointer-events: none;
+
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-field label {
+    display: block;
+}
+
+#anotations {
+    gap: .5rem;
+}
+
+.textbox-padrao {
+    border-radius: 8px;
+    border: 1px solid rgb(230, 230, 230);
+    outline: none;
+    text-align: left;
+    padding: .5rem;
+    font-size: 11pt;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: outline 0.5s ease, border-color 0.5s ease; /* Suaviza as mudanças */
+
+}
+.textbox-padrao:focus {
+    outline: 2px solid rgba(0, 123, 255, 0.8); /* Borda azul ao focar */
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+#anotations textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.book-info {
+    display: flex;
+    gap: 1rem;
+}
+
+#book-cover {
+    width: 100px;
+    img {
+        border-radius: 4px;
+        width: 100%;
+    }
+}
+
+#rating-wrapper {
+    display: flex;
+    gap: 4px;
+}
+
+#rating-wrapper input[type="radio"] {
+    appearance: none; /* Remove o estilo padrão do navegador */
+    width: 1rem; /* Remove largura do input */
+    height: 1rem; /* Remove altura do input */
+    position: relative;
+    cursor: pointer;
+}
+
+#rating-wrapper input[type="radio"]::before {
+    content: '★'; /* Adiciona o símbolo de estrela */
+    font-size: 24px; /* Define o tamanho da estrela */
+    color: #ccc; /* Cor padrão da estrela */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: color 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+#rating-wrapper input[type="radio"].group-check::before {
+    color: #007bff; /* Cor da estrela ao selecionar */
+}
