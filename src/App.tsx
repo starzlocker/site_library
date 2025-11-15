@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import "./components/ModalBookDetails/ModalBookDetails.css"
-import Main from "./components/Main/Main";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-// import books from "./data/books";
-import Book from "./models/Book";
+import Main from "./components/Main/Main.js";
+import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
+import Book from "./models/Book.js";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBooks, setFilteredBooks] = useState(books);
   const [errors, setErrors] = useState([]);
@@ -51,17 +50,8 @@ const App = () => {
     </ul>
   }
 
-  const addBook = ({ title, author, year, genre, cover_url }) => {
-    let newBook = new Book();
-    newBook
-      .setTitle(title)
-      .setAuthor(author)
-      .setYear(year)
-      .setGenre(genre)
-      .setCover(cover_url);
-
-    console.info(newBook)
-    books.push(newBook);
+  const addBook = (book: Book) => {
+    books.push(book);
     setFilteredBooks([...books]); // Update the filtered books as well
   };
   
